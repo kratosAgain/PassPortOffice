@@ -102,12 +102,9 @@ public class StageA implements Stage {
 				else{
 					break;
 				}
-			}
-			
-			
+			}		
 			time++;
-			i++;
-			
+			i++;			
 		}
 		
 		while(this.withStaffList.size()>0){
@@ -123,10 +120,7 @@ public class StageA implements Stage {
 			Collections.reverse(toRemove);
 			this.doneWithList.addAll(toRemove);
 			time++;
-		}
-		
-		
-		
+		}		
 		//System.out.println(this.withStaffList.size());
 	}
 	
@@ -173,11 +167,9 @@ public class StageA implements Stage {
 					break;
 				}
 				attempts++;
-			}
-			
+			}			
 			time++;
-			i++;
-			
+			i++;			
 		}
 		
 		while(this.withStaffList.size()>0){
