@@ -30,7 +30,7 @@ public class StageC implements Stage {
 	public void fillQueueList(){
 		Random ran = new Random();
 		for(int i=0;i<this.queueList.size();i++){
-			int time = 5+ran.nextInt(10);
+			int time = 1+ran.nextInt(10);
 			Person p = this.queueList.get(i);
 			p.setTimeOnC(time);
 			this.queueList.set(i, p);
