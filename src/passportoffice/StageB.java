@@ -56,7 +56,7 @@ public class StageB implements Stage {
 				this.doneWithList.addAll(toRemove);
 			}
 			while(this.withStaffList.size()<this.totalStaff){
-				if(this.queueList.size()>0  && this.queueList.get(0).getEntryTime() <= time){
+				if(this.queueList.size()>0  && this.queueList.get(0).getTimeLeaveA() <= time){
 					Person p = this.queueList.get(0);
 					p.setTimeLeaveB(time + p.getTimeOnB());
 					this.withStaffList.add(p);

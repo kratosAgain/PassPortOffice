@@ -106,7 +106,7 @@ public class Person {
 	}
 	
 	public String toString(){
-		String s = "ID: "+this.id+" Entry Time: "+this.entryTime + " ExitTime: "+this.exitTime;
+		String s = "ID: "+this.id+" Entry Time: "+this.entryTime + " ExitTime: "+this.getExitTime() ;
 		return s;
 	}
 	

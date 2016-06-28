@@ -22,7 +22,7 @@ public class ComparisonSuite {
 		StageC c = new StageC(b.getDoneWith());
 		c.fillQueueList();
 		c.process();
-		
+		//System.out.println(c.getDoneWith());
 		int totalTimeTakenByStaff = this.findMaxTime(c.getDoneWith()) - 0;
 		double averageUserTime = this.findAverageTimePerUser(c.getDoneWith());
 		double averageUserTimeWasted = this.findAverageTimeWasted(c.getDoneWith());
@@ -47,14 +47,22 @@ public class ComparisonSuite {
 		StageC c = new StageC(b.getDoneWith());
 		c.fillQueueList();
 		c.randomProcess();
-		
-		int totalTimeTakenByStaff = this.findMaxTime(c.getDoneWith()) - 0;
-		double averageUserTime = this.findAverageTimePerUser(c.getDoneWith());
-		double averageUserTimeWasted = this.findAverageTimeWasted(c.getDoneWith());
+		ArrayList<Person> gdw= this.SetExitTimes(c.getDoneWith());
+		//System.out.println(c.getDoneWith());
+		int totalTimeTakenByStaff = this.findMaxTime(gdw) - 0;
+		double averageUserTime = this.findAverageTimePerUser(gdw);
+		double averageUserTimeWasted = this.findAverageTimeWasted(gdw);
 		System.out.println("Analysis when next user selected on randomly from available queue:"
 				+ "\nTotal Time Taken By Staff:  "+totalTimeTakenByStaff
 				+ "\nAverage User time (from entry to exit) : "+averageUserTime
 				+ "\nAverage User time wasted in queues : "+averageUserTimeWasted);
+	}
+	
+	ArrayList<Person> SetExitTimes(ArrayList<Person> list){
+		for(Person p:list){
+			p.setExitTime(p.getExitTime() + p.timeSpentOnBooths());
+		}
+		return list;
 	}
 	
 	//find maximum exit time i.e the time when staff have finished off with all users

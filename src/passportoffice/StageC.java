@@ -56,7 +56,7 @@ public class StageC implements Stage {
 				this.doneWithList.addAll(toRemove);
 			}
 			while(this.withStaffList.size()<this.totalStaff){
-				if(this.queueList.size()>0  && this.queueList.get(0).getEntryTime() <= time){
+				if(this.queueList.size()>0  && this.queueList.get(0).getTimeLeaveB() <= time){
 					Person p = this.queueList.get(0);
 					p.setTimeLeaveC(time + p.getTimeOnC());
 					p.setExitTime(time+p.getTimeOnC());
