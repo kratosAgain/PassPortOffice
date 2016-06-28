@@ -107,7 +107,7 @@ public class StageB implements Stage {
 			}
 			int totalOptions = 0;
 			for(int k=0;k<this.queueList.size();k++){
-				if(this.queueList.get(k).getEntryTime() <=time){
+				if(this.queueList.get(k).getTimeLeaveA() <=time){
 					totalOptions++;
 				}
 				else{
@@ -117,7 +117,7 @@ public class StageB implements Stage {
 			int attempts = 0;
 			while(this.withStaffList.size()<this.totalStaff  && totalOptions>0){
 				int ranIDX = ran.nextInt(totalOptions);
-				if(this.queueList.size()>0  && this.queueList.get(ranIDX).getEntryTime() <= time){
+				if(this.queueList.size()>0  && this.queueList.get(ranIDX).getTimeLeaveA() <= time){
 					Person p = this.queueList.get(ranIDX);
 					p.setTimeLeaveB(time + p.getTimeOnB());
 					this.withStaffList.add(p);

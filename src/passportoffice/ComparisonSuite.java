@@ -47,7 +47,8 @@ public class ComparisonSuite {
 		StageC c = new StageC(b.getDoneWith());
 		c.fillQueueList();
 		c.randomProcess();
-		ArrayList<Person> gdw= this.SetExitTimes(c.getDoneWith());
+		ArrayList<Person> gdw=c.getDoneWith();
+				//this.SetExitTimes(c.getDoneWith());
 		//System.out.println(c.getDoneWith());
 		int totalTimeTakenByStaff = this.findMaxTime(gdw) - 0;
 		double averageUserTime = this.findAverageTimePerUser(gdw);
